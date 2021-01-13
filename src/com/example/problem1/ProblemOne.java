@@ -8,22 +8,21 @@ public class ProblemOne {
     static int RecursiveFunction(int r, int n){
         Scanner input = new Scanner(System.in);
         //int resultado = RecursiveFunction();
-        System.out.println("Ingresa el valor mayor o igual a 3 para N el coeficiente");
+        System.out.println("Ingresa la cantidad de coeficientes a calcular ");
         n = input.nextInt();
+
+
+        int[] x = {n};
+        int[] res = x;
 
         System.out.println("Ingresa un valor para r");
         r = input.nextInt();
 
-        if(r >= 0 && n >= 3){
-            for(int i = 0; i < n; i++){
-                if(r == 0 || r == n){
-                    int res = (RecursiveFunction(n - 1, r) + RecursiveFunction(n - 1, r - 1));
-                    return res;
-                }
-            }
-        } else
-            return  0;
+        if(r >= 0 && n >= 3)  return (RecursiveFunction(x - 1, r) + RecursiveFunction(x, x - 1));
+            else if(x < 0) return x = [0] ;
+            else if(r == 0 && n >= 3) return (n * RecursiveFunction(n - 1, r))/( x * RecursiveFunction(x - 1, r)) * (RecursiveFunction((n - x) -1, r) + RecursiveFunction((n-x) - 1, r)) ;
 
+            return res[];
     }
 
     public static void main(String[] args){
